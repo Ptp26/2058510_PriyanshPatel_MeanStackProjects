@@ -1,0 +1,7 @@
+https://github.com/Ptp26/2058510_PriyanshPatel_MeanStack
+
+The commit is for the Phase2 project Cart Management.
+It can be found in my github phase 2 / cart management.
+
+To run the files just run the command :  tsc
+and run the index.html file.

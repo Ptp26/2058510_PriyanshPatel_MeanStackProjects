@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<h3  style="text-align: center;">
+    Cart Management System
+    <small class="text-muted">Get your shoes here!</small>
+  </h3>
+
+  <br>
+<body onload="displayShoes()">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <i class="fas fa-shopping-cart" style="font-size:40px"></i>
+                <label>Cart Size:</label><label id="size">0</label>
+            </div>
+            <div class="col row-30%">
+                <form action="./checkout.html">
+                     <input type="submit" value="Check Out"style="text-align: right">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="items_container">
+        <div class="row" id="items">
+        </div>
+    </div>
+</body>
+
+</html>
