@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Task Planner</title>
+</head>
+<body>
+    <h1 style="border: 2; background-color: aquamarine; text-align: center;"> TASK PLANNER </h1>
+    <hr/>
+    <br/>
+    <div style="text-align: center; border: 2px;">
+        <h2 style="border: 1; "> Add Your Tasks Below </h2>
+        <form action = "addtask">
+            <label> Employee ID</label>
+            <input type = "text", name="empid"> <br/>
+            <label> Employee Name</label>
+            <input type = "text", name="ename"> <br/>
+            <label> Task ID</label>
+            <input type = "text", name="taskid"> <br/>
+            <label> Task Name</label>
+            <input type = "text", name="taskname"> <br/>
+            <label> Due Date</label>
+            <input type = "date", name="date"> <br/>
+            <input type = "submit" value="Add Task">
+            <input type = "reset" value = "Reset">
+            
+        </form>
+    </div>
+    <hr/>
+    <div div style= "text-align: center; border: 2px;">
+        <form action = "delete task">
+            <label> Enter the Task ID that you want to delete: </label>
+            <input type = "text" name = "taskid">
+            <input type = "submit" value="Add Task">
+        </form>
+    </div>
+
+    <hr/>
+    <div style= "text-align: center; border: 2px;">
+        <h2> Task List </h2>
+        <form action = "showtable">
+            <input type = "submit"  value = "Show all tasks">
+        </form>
+    </div>
+
+</body>
+</html>
