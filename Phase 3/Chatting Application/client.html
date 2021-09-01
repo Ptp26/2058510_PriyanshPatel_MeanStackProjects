@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting With Socket.IO</title>
+    <link rel=" stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/Javascript">
+        
+        function time1(){
+            let currentDate = new Date();
+            let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+            // console.log(time);
+            return time;
+        }
+
+
+        var socket=io();
+
+        socket.on("startup",(start)=> {
+            document.getElementById("chat").innerHTML+=time1()+" Server Says: "+start+"<br/>";
+        });
+        
+        function send_message(){
+            let msg = document.getElementById("client_message").value;
+            let name = document.getElementById("client_name").value;
+            if(name=="") name="Client";
+            document.getElementById("chat").innerHTML+=time1()+name+" Says: "+msg+"<br/>";
+            let completeMessage = [name,msg];
+            socket.emit("Client_Message",completeMessage);
+            document.getElementById("client_message").value="";
+        };
+
+        socket.on("Server_Message",(server)=> {
+            document.getElementById("chat").innerHTML+=time1()+" Server Says: "+server+"<br/>";
+        });
+        
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">Chatting With Socket.IO</h2>
+    <div class="container">
+        <div style = "border: 1px;" id="chat">
+            <b>Chatting Application</b><br/>
+        </div><br/><br/>
+        <hr/>
+        <label class="UI">Name: </label><input style = "padding-left: 50px;"type="text" id="client_name"/><br/><br/>
+        <label class="UI">Message:</label>
+        <textarea id="client_message" class="UI" style="width: 90%;"></textarea><br/><br/>
+        <input type="button" value="Send" class="UI" onclick="send_message()"/>
+        <hr/>
+    </div>
+</body>
+</html>
